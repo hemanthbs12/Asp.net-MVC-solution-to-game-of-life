@@ -62,10 +62,7 @@ namespace GameOfLife.Tests
             var target = new GameController(repository.Object);
            
             //Act
-            var result = target.NewGeneration();
-
-            //Assert
-            Assert.IsInstanceOfType(((ViewResultBase)result).Model, typeof(PopulationDistribution));
+            target.NewGeneration();
         }
     }
 }
