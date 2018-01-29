@@ -108,7 +108,7 @@ namespace GameOfLifeRepository
             }
             if (column > 0 && previousGeneration[row, column - 1])
             {
-                ++neighboursCount;
+                neighboursCount++;
             }
             return neighboursCount;
         }
