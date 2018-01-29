@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using GameOfLifeRepository;
 using Moq;
 using GameOfLife.Controllers;
 using GameOfLifePresentation;
+using GameOfLifeRepository.Tests;
 
 namespace GameOfLife.Tests
 {

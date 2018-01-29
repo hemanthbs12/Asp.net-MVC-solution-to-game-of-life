@@ -17,7 +17,7 @@ namespace GameOfLife.Controllers
         public ActionResult Index()
         {
             var randomPopulationDistribution = _generationRepository.GetRandomPopulationDistribution(Convert.ToInt32(ConfigurationManager.AppSettings["PopulationSize"]));
-
+            //Using tempdata instead of any other cache for simple implementation. For scaling, it can be moved to cache. This also avoids posting large set of data.
             TempData["PreviousGeneration"] = randomPopulationDistribution;
             return View(randomPopulationDistribution);
         }

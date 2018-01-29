@@ -79,7 +79,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameControllerTest.cs" />
-    <Compile Include="PopulationDistributionMocks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -90,6 +89,10 @@
     <ProjectReference Include="..\GameOfLifePresentation\GameOfLifePresentation.csproj">
       <Project>{7244015E-B36A-4722-AD21-4990C7794307}</Project>
       <Name>GameOfLifePresentation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GameOfLifeRepository.Tests\GameOfLifeRepository.Tests.csproj">
+      <Project>{EABC235D-AC8D-4155-B0FB-88B1C7729BAE}</Project>
+      <Name>GameOfLifeRepository.Tests</Name>
     </ProjectReference>
     <ProjectReference Include="..\GameOfLifeRepository\GameOfLifeRepository.csproj">
       <Project>{9FD9A083-7F69-4C00-89FC-950E30AC6759}</Project>
