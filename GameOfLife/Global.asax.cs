@@ -13,8 +13,10 @@ namespace GameOfLife
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             //AutoMapperConfiguration.Configure();
+            ViewEngines.Engines.Clear();
+            ViewEngines.Engines.Add(new RazorViewEngine());
         }
 
-        
+
     }
 }
