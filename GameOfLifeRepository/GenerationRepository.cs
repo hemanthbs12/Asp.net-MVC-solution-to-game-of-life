@@ -36,7 +36,6 @@ namespace GameOfLifeRepository
                 Size = previousGeneration.Size
             };
 
-            //get number neighbours
             for (int i = 0; i < previousGeneration.Size - 1; i++)
             {
                 for (int j = 0; j < previousGeneration.Size - 1; j++)
@@ -49,34 +48,27 @@ namespace GameOfLifeRepository
             return nextGeneration;
         }
 
-        private bool GetNewStatus(bool previousGenerationStatus, int neighboursCount)
+        private static bool GetNewStatus(bool previousGenerationStatus, int neighboursCount)
         {
             if ((neighboursCount < 2 || neighboursCount > 3) && previousGenerationStatus)
                 return false;
             if ((neighboursCount == 2 || neighboursCount == 3) && previousGenerationStatus)
                 return true;
-            //if (neighboursCount > 3 && previousGenerationStatus)
-            //    return false;
             if (neighboursCount == 3 && !previousGenerationStatus)
                 return true;
 
             return previousGenerationStatus;
         }
 
-        /// <summary>
-        /// =======================================================>=========
-        /// [row - 1, column - 1][row - 1, column][row - 1, column + 1]     ||
-        /// [row, column - 1]    [row,column]     [row, column + 1]         ||
-        /// [row + 1, column - 1][row + 1, column][row + 1, column + 1]     ||
-        /// ================================================================
-        /// </summary>
-        /// <param name="row"></param>
-        /// <param name="column"></param>
-        /// <param name="previousGeneration"></param>
-        /// <param name="size"></param>
-        /// <returns></returns>
-        private int GetNeighboursCount(int row, int column, bool[,] previousGeneration, int size)
+      
+        private static int GetNeighboursCount(int row, int column, bool[,] previousGeneration, int size)
         {
+            //=======================================================>=========
+            //[row - 1, column - 1][row - 1, column][row - 1, column + 1]     ||
+            //[row, column - 1]    [row,column]     [row, column + 1]         ||
+            //[row + 1, column - 1][row + 1, column][row + 1, column + 1]     ||
+            //=================================================================
+
             var neighboursCount = 0;
             if (row > 0 && column > 0 && previousGeneration[row - 1, column - 1])
             {

@@ -14,6 +14,7 @@ namespace GameOfLifeRepository.Tests
         {
             var populationDistribution = new PopulationDistribution()
             {
+                //This life matrix covers all possible life combination for next generation rules
                 LifeMatrix = new[,]
                 {
                     {true, true, true, false,true, true, false,false},
