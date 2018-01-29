@@ -1,0 +1,31 @@
+﻿@model GameOfLifePresentation.PopulationDistribution
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br/>
+<div>
+  <table>
+    @for (int i = 0; i < Model.Size - 1; i++)
+    {
+      <tr>
+        @for (int j = 0; j < Model.Size - 1; j++)
+        {
+          if (Model.LifeMatrix[i, j])
+          {
+            <td style="width: 20px; height: 20px; background-color: cornflowerblue; border:1px solid black;"></td>
+          }
+          else
+          {
+            <td style="width: 20px; height: 20px; background-color: aliceblue; border:1px solid black"></td>
+          }
+        }
+      </tr>
+    }
+  </table>
+</div>
+<div>
+  <br />
+  <input type="button" onclick="location.href = '@Url.Action("NewGeneration", "Game")'" value="Next Generation"/>
+
+</div>
+
